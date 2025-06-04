@@ -18,16 +18,22 @@
                     <p class="subtitle">Never use an insecure password again.</p>
                 </div>
                 <div id="functions">
-                    <button class="btn-confirm" onclick="generatePassword()">Generate passwords</button>
+                    <button class="btn-confirm" onclick="genPasswords()">Generate passwords</button>
                     
-                    <label for="genLength">Password Length</label>
-                    <input id="genLength" type="number" min="1" max="15" />
+                    <div class="flex-column">
+                        <label for="size-el">Password Length</label>
+                        <input id="size-el" type="number" min="1" max="15" value="15"/>
+                    </div>
                     
-                    <input type="checkbox" id="haveNumbers" checked/>
-                    <label for="haveNumbers">Numbers</label>
+                    <div class="flex-column">
+                        <label for="num-el">Numbers</label>
+                        <input type="checkbox" id="num-el" checked/>
+                    </div>
 
-                    <input type="checkbox" id="haveSymbols" checked/>
-                    <label for="haveSymbols">Symbols</label>
+                    <div class="flex-column">
+                        <label for="sym-el">Symbols</label>
+                        <input type="checkbox" id="sym-el" checked/>
+                    </div>
                 </div>
             </div>
         </section>
