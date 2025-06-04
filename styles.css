@@ -85,6 +85,15 @@ body {
     flex-direction: column;
 }
 
+#functions {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-evenly;
+}
+
 .divisor {
     width: 75%;
     margin: 30px  auto;
