@@ -17,7 +17,18 @@
                     <span class="title emphasize">random password</span>
                     <p class="subtitle">Never use an insecure password again.</p>
                 </div>
-                <button class="btn-confirm" onclick="generatePassword()">Generate passwords</button>
+                <div id="functions">
+                    <button class="btn-confirm" onclick="generatePassword()">Generate passwords</button>
+                    
+                    <label for="genLength">Password Length</label>
+                    <input id="genLength" type="number" min="1" max="15" />
+                    
+                    <input type="checkbox" id="haveNumbers" checked/>
+                    <label for="haveNumbers">Numbers</label>
+
+                    <input type="checkbox" id="haveSymbols" checked/>
+                    <label for="haveSymbols">Symbols</label>
+                </div>
             </div>
         </section>
 
