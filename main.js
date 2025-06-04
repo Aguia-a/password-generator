@@ -65,22 +65,28 @@ function genPasswordOne() {
 
     let passwordOne = "";
     for (let i = 0; i < size; i++) {
-        let option = getOptions();
-        let valid;
+        let valid = false;
         do {
+            let option = getOptions();
             if (option === 1) {
                 passwordOne += genLetters();
                 valid = true;
-            } else if(option === 2 && hasNumbers) {
+            }
+
+            if (option === 2 && hasNumbers) {
                 passwordOne += genNumbers();
                 valid = true;
-            } else if(option === 3 && hasSymbols) {
-                passwordOne += genSymbols();
-                valid = true;
-            } else {
+            } else if (option === 2 && !hasNumbers) {
                 valid = false;
             }
-        } while(valid != true);
+
+            if (option === 3 && hasSymbols) {
+                passwordOne += genSymbols();
+                valid = true;
+            } else if (option === 3 && !hasSymbols) {
+                valid = false;
+            }
+        } while (valid != true);
     }
     return passwordOne;
 }
@@ -92,22 +98,28 @@ function genPasswordTwo() {
 
     let passwordTwo = "";
     for (let i = 0; i < size; i++) {
-        let option = getOptions();
-        let valid;
+        let valid = false;
         do {
+            let option = getOptions();
             if (option === 1) {
                 passwordTwo += genLetters();
                 valid = true;
-            } else if(option === 2 && hasNumbers) {
+            }
+
+            if (option === 2 && hasNumbers) {
                 passwordTwo += genNumbers();
                 valid = true;
-            } else if(option === 3 && hasSymbols) {
-                passwordTwo += genSymbols();
-                valid = true;
-            } else {
+            } else if (option === 2 && !hasNumbers) {
                 valid = false;
             }
-        } while(valid != true);
+
+            if (option === 3 && hasSymbols) {
+                passwordTwo += genSymbols();
+                valid = true;
+            } else if (option === 3 && !hasSymbols) {
+                valid = false;
+            }
+        } while (valid != true);
     }
     return passwordTwo;
 }
