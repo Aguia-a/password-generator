@@ -1,0 +1,115 @@
+:root {
+    /* Light Theme Colors */
+    --light-background: #ECFDF5;
+    --light-text: #0C090A;
+
+    /* Dark Theme Colors */
+    --dark-background: #1F2937;
+    --dark-text: #E5DED4;
+
+    --main-green: #4ADF86;
+    --secondary-green: #10B981;
+    --text-green: #5DEF92;
+    
+    --dark-ish: #273549;
+    --sub-text: #6B7280;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+}
+
+.test {
+    border: 1px dotted blue;
+}
+
+/* Page Themes Configuration START */
+.light {
+    background-color: var(--light-background);
+    color: var(--light-text);
+}
+
+.dark {
+    background-color: var(--dark-background);
+    color: var(--dark-text);
+}
+/* Page Themes Configuration END */
+.title, .subtitle {
+    display: block;
+}
+
+.title {
+    font-family: Karla, Arial;
+    font-size: 40px;
+    font-weight: 800;
+
+    margin-bottom: -8px;
+}
+
+.subtitle {
+    color: var(--sub-text);
+    font-size: 20px;
+
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+.emphasize {
+    color: var(--main-green);
+}
+
+.btn-confirm {
+    width: 160px;
+    padding: 8px 0px;
+
+    border-radius: 6px;
+    border: none;
+
+    background-color: var(--secondary-green);
+    color: var(--light-background);
+
+    font-family: inherit;
+}
+
+/* Page Items Organization */
+#main-section {
+    margin-top: 75px;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 75%;
+    height: 250px;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.divisor {
+    width: 75%;
+    margin: 30px  auto;
+
+    border: 1px solid #999fab;
+}
+
+#password {
+    margin: 0 auto;
+
+    width: 75%;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-evenly;
+}
+
+.output-area {
+    background-color: var(--dark-ish);
+    color: var(--text-green);
+    
+    width: 180px;
+    height: 30px;
+
+    border-radius: 6px;
+    border: none;
+}
