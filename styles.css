@@ -94,6 +94,11 @@ body {
     justify-content: space-evenly;
 }
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
 .divisor {
     width: 75%;
     margin: 30px  auto;
@@ -125,4 +130,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+input[type=number] {
+    background-color: var(--dark-ish);
+    color: var(--light-background);
+    
+    border: none;
+    border-radius: 5px;
+
+    text-align: center;
 }
