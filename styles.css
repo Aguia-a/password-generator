@@ -35,109 +35,161 @@ body {
     color: var(--dark-text);
 }
 /* Page Themes Configuration END */
-.title, .subtitle {
-    display: block;
-}
 
-.title {
-    font-family: Karla, Arial;
-    font-size: 40px;
-    font-weight: 800;
+@media only screen and (max-width: 600px) {
+    #hero {
+        height: 402px;
+        width: 300px;
 
-    margin-bottom: -8px;
-}
+        display: flex;
+        flex-direction: column;
 
-.subtitle {
-    color: var(--sub-text);
-    font-size: 20px;
+        align-items: center;
+        text-align: center;
 
-    margin-top: 25px;
-    margin-bottom: 50px;
-}
+        margin: 50px auto 0 auto;
+    }
 
-.emphasize {
-    color: var(--main-green);
-}
+    .header {
+        font-family: Karla, sans-serif;
+        font-weight: 800;
+        font-size: 35px;
+    }
 
-.btn-confirm {
-    width: 160px;
-    padding: 8px 0px;
+    .title {
+        margin: 0;
+    }
 
-    border-radius: 6px;
-    border: none;
+    .subtitle {
+        font-weight: 500;
+        font-size: 20px;
+        
+        margin: 15px 0 15px 0;
 
-    background-color: var(--secondary-green);
-    color: var(--light-background);
+        color: var(--sub-text);
+    }
 
-    font-family: inherit;
-}
+    .emphasize {
+        color: var(--main-green);
+    }
 
-/* Page Items Organization */
-#main-section {
-    margin-top: 75px;
-    margin-left: auto;
-    margin-right: auto;
+    .flex-column {
+        margin: 0 0 15px 0;
+    }
 
-    width: 75%;
-    height: 250px;
-    
-    display: flex;
-    flex-direction: column;
-}
+    #passLen-el {
+        width: 30px;
+        height: 30px;
 
-#functions {
-    width: 100%;
+        display: flex;
 
-    display: flex;
-    flex-direction: row;
-    
-    justify-content: space-evenly;
-}
+        justify-content: center;
+        align-items: center;
 
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
+        background-color: var(--dark-ish);
+        color: var(--text-green);
 
-.divisor {
-    width: 75%;
-    margin: 30px  auto;
+        font-weight: 700;
 
-    border: 1px solid #999fab;
-}
+        border: 0;
+        border-radius: 5px;
+    }
 
-#password {
-    margin: 0 auto;
+    .btn {
+        display: block;
+        border: 0;
+        border-radius: 3px;
+        text-align: center;
 
-    width: 75%;
+        background-color: var(--text-green);
 
-    display: flex;
-    flex-direction: row;
+        font-weight: 600;
+    }
 
-    justify-content: space-evenly;
-}
+    .btn-confirm {
+        display: block;
+        border: 0;
+        border-radius: 3px;
+        text-align: center;
 
-.output-area {
-    background-color: var(--dark-ish);
-    color: var(--text-green);
-    
-    width: 180px;
-    height: 30px;
+        background-color: var(--text-green);
+        color: var(--light-text);
 
-    border-radius: 6px;
-    border: none;
+        font-weight: 600;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        padding: 5px 10px;
+    }
 
-input[type=number] {
-    background-color: var(--dark-ish);
-    color: var(--light-background);
-    
-    border: none;
-    border-radius: 5px;
+    .function {
+        width: 30px;
+        height: 30px;
+    }
 
-    text-align: center;
+    .functions-wrapper {
+        display: flex;
+
+        flex-direction: row;
+        justify-content: space-evenly;
+        
+        margin-top: 5px;
+    }
+
+    label {
+        display: block;
+
+        font-weight: 650;
+    }
+
+    input [type=number] {
+        background-color: var(--dark-ish);
+        color: var(--text-green);
+        
+        font-weight: 600;
+
+        border: none;
+        border-radius: 5px;
+
+        text-align: center;
+    }
+
+    .divisor {
+        width: 300px;
+        height: 3px;
+
+        border: 1px solid var(--sub-text);
+        border-radius: 3px;
+
+        background-color: var(--sub-text);
+
+        margin: 20px auto;
+    }
+
+    #password {
+        width: 300px;
+        height: 60px;
+
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .output-area {
+        width: 180px;
+        height: 25px;
+
+        border: 0;
+        border-radius: 6px;
+
+        background-color: var(--dark-ish);
+        color: var(--text-green);
+
+        display: flex;
+        
+        justify-content: center;
+        align-items: center;
+    }
 }
