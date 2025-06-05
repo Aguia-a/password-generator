@@ -51,6 +51,14 @@ function delOne() {
     updateArea();
 }
 
+function copyPassOne() {
+    navigator.clipboard.writeText(output1.textContent);
+}
+
+function copyPassTwo() {
+    navigator.clipboard.writeText(output2.textContent);
+}
+
 function getPassSize() {
     let passSize = passLenght;
     return passSize;
