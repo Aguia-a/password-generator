@@ -9,20 +9,21 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     </head>
-    <body id="body" class="dark">
+    <body id="body" class="light">
         <section id="hero">
-            <div id="main-section">
                 <div class="header">
                     <p class="title">Generate a</p>
                     <span class="title emphasize">random password</span>
                     <p class="subtitle">Never use an insecure password again.</p>
                 </div>
                 <div id="functions">
-                    <button class="btn-confirm" onclick="genPasswords()">Generate passwords</button>
-                    
                     <div class="flex-column">
                         <label for="size-el">Password Length</label>
-                        <input id="size-el" type="number" min="1" max="15" value="15"/>
+                        <div class="functions-wrapper">
+                            <button id="del-el" class="btn function" onclick="delOne()">-1</button>
+                            <div id="passLen-el"></div>
+                            <button id="add-el" class="btn function" onclick="addOne()">+1</button>
+                        </div>
                     </div>
                     
                     <div class="flex-column">
@@ -34,8 +35,9 @@
                         <label for="sym-el">Symbols</label>
                         <input type="checkbox" id="sym-el" checked/>
                     </div>
+
+                    <button class="btn-confirm" onclick="genPasswords()">Generate passwords</button>
                 </div>
-            </div>
         </section>
 
         <div class="divisor"></div>

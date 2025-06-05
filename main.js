@@ -1,15 +1,41 @@
 let output1 = document.getElementById("outputOne");
 let output2 = document.getElementById("outputTwo");
-let sizeEl = document.getElementById("size-el");
 let numEl = document.getElementById("num-el");
 let symEl = document.getElementById("sym-el");
+let passLenEl = document.getElementById("passLen-el");
+
+let passLenght = 15;
 
 const letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const symbols = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"];
 
+function updateArea() {
+    passLenEl.textContent = passLenght;
+}
+
+updateArea();
+
+function addOne() {
+    if (passLenght === 15) {
+        passLenght = 15;    
+    } else {
+        passLenght += 1;
+    }
+    updateArea();
+}
+
+function delOne() {
+    if (passLenght === 1) {
+        passLenght = 1;    
+    } else {
+        passLenght -= 1;
+    }
+    updateArea();
+}
+
 function getPassSize() {
-    let passSize = parseInt(sizeEl.value);
+    let passSize = passLenght;
     return passSize;
 }
 
