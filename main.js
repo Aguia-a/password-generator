@@ -3,6 +3,9 @@ let output2 = document.getElementById("outputTwo");
 let numEl = document.getElementById("num-el");
 let symEl = document.getElementById("sym-el");
 let passLenEl = document.getElementById("passLen-el");
+let themeBtn = document.getElementById("theme-btn");
+let pageTheme = document.getElementById("body");
+let theme = "light";
 
 let passLenght = 15;
 
@@ -15,6 +18,20 @@ function updateArea() {
 }
 
 updateArea();
+
+function changeTheme() {
+    if(theme === "light") {
+        pageTheme.classList.remove("light");
+        pageTheme.classList.add("dark");
+        themeBtn.textContent = "Light Mode ☀️";
+        theme = "dark";
+    } else if (theme === "dark") {
+        pageTheme.classList.remove("dark");
+        pageTheme.classList.add("light");
+        themeBtn.textContent = "Dark Mode 🌙";
+        theme = "light";
+    }
+}
 
 function addOne() {
     if (passLenght === 15) {
