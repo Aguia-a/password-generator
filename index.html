@@ -46,8 +46,15 @@
         <div class="divisor"></div>
 
         <section id="password">
-            <div class="output-area" id="outputOne"></div>
-            <div class="output-area" id="outputTwo"></div>
+            <div class="output-wrapper">
+                <div class="output-area" id="outputOne"></div>
+                <button id="copyOne" class="copy" onclick="copyPassOne()"><img class="copy-img" src="./icons/copy-icon.png"/></button>
+            </div>
+            
+            <div class="output-wrapper">
+                <div class="output-area" id="outputTwo"></div>
+                <button id="copyTwo" class="copy" onclick="copyPassTwo()"><img class="copy-img" src="./icons/copy-icon.png"/></button>
+            </div>
         </section>
 
         <script src="./main.js"></script>
