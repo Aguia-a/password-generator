@@ -139,6 +139,9 @@ label {
         color: var(--text-green);
 }
 
+.output-wrapper {
+        display: flex;
+}
 /* Page Items END */
 
 @media only screen and (max-width: 600px) {
@@ -225,6 +228,28 @@ label {
         
         justify-content: center;
         align-items: center;
+    }
+
+    .copy {
+        height: 25px;
+        width: 30px;
+
+        display: block;
+        
+        justify-content: center;
+        align-items: center;
+
+        background-color: var(--main-green);
+        border: none;
+        border-radius: 5px;
+    }
+
+    .copy-img {
+        width: 22px;
+
+        margin: 1px 0px 1px -2px;
+
+        object-fit: cover;
     }
 }
 
@@ -329,5 +354,27 @@ label {
         
         justify-content: center;
         align-items: center;
+    }
+
+    .copy {
+        height: 25px;
+        width: 30px;
+
+        display: block;
+        
+        justify-content: center;
+        align-items: center;
+
+        background-color: var(--main-green);
+        border: none;
+        border-radius: 5px;
+    }
+
+    .copy-img {
+        width: 22px;
+
+        margin: 1px 0px 1px -2px;
+
+        object-fit: cover;
     }
 }
