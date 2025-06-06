@@ -1,5 +1,7 @@
-let output1 = document.getElementById("outputOne");
-let output2 = document.getElementById("outputTwo");
+let output = [
+    document.getElementById("outputOne"),
+    document.getElementById("outputTwo")
+];
 let numEl = document.getElementById("num-el");
 let symEl = document.getElementById("sym-el");
 let passLenEl = document.getElementById("passLen-el");
@@ -7,14 +9,17 @@ let themeBtn = document.getElementById("theme-btn");
 let pageTheme = document.getElementById("body");
 let theme = "light";
 
-let passLenght = 15;
+let passwordSettings = {
+    length: 15, // Selected Password Length
+    min: 1,     // Minimum Password Length
+    max: 15     // Maximum Password Length
+};
 
 const letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const symbols = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"];
 
 function updateArea() {
-    passLenEl.textContent = passLenght;
+    passLenEl.textContent = passwordSettings.length;
 }
 
 updateArea();
@@ -33,35 +38,22 @@ function changeTheme() {
     }
 }
 
-function addOne() {
-    if (passLenght === 15) {
-        passLenght = 15;    
-    } else {
-        passLenght += 1;
+function change(changeType) {
+    passwordSettings.length += changeType;
+
+    if (passwordSettings.length <= passwordSettings.min) {
+        passwordSettings.length = passwordSettings.min;
     }
+
+    if (passwordSettings.length >= passwordSettings.max) {
+        passwordSettings.length = passwordSettings.max;    
+    }
+
     updateArea();
 }
 
-function delOne() {
-    if (passLenght === 1) {
-        passLenght = 1;    
-    } else {
-        passLenght -= 1;
-    }
-    updateArea();
-}
-
-function copyPassOne() {
-    navigator.clipboard.writeText(output1.textContent);
-}
-
-function copyPassTwo() {
-    navigator.clipboard.writeText(output2.textContent);
-}
-
-function getPassSize() {
-    let passSize = passLenght;
-    return passSize;
+function copyPass(num) {
+    navigator.clipboard.writeText(output[num].textContent);
 }
 
 function checkNumbers() {
@@ -93,9 +85,7 @@ function genLetters() {
 }
 
 function genNumbers() {
-    let index = Math.floor(Math.random() * numbers.length);
-    let randomNumber = numbers[index];
-    return randomNumber;
+    return Math.floor(Math.random() * 10).toString();
 }
 
 function genSymbols() {
@@ -105,77 +95,44 @@ function genSymbols() {
 }
 
 function getOptions() {
-    let option = Math.floor(Math.random() * 3) + 1;
-    return option;
+    return Math.floor(Math.random() * 3) + 1;
 }
 
-function genPasswordOne() {
-    let size = getPassSize();
+function genPassword() {
+    let size = passwordSettings.length;
     let hasNumbers = checkNumbers();
     let hasSymbols = checkSymbols();
 
-    let passwordOne = "";
+    let password = "";
     for (let i = 0; i < size; i++) {
         let valid = false;
         do {
             let option = getOptions();
             if (option === 1) {
-                passwordOne += genLetters();
+                password += genLetters();
                 valid = true;
             }
 
             if (option === 2 && hasNumbers) {
-                passwordOne += genNumbers();
+                password += genNumbers();
                 valid = true;
             } else if (option === 2 && !hasNumbers) {
                 valid = false;
             }
 
             if (option === 3 && hasSymbols) {
-                passwordOne += genSymbols();
+                password += genSymbols();
                 valid = true;
             } else if (option === 3 && !hasSymbols) {
                 valid = false;
             }
         } while (valid != true);
     }
-    return passwordOne;
-}
-
-function genPasswordTwo() {
-    let size = getPassSize();
-    let hasNumbers = checkNumbers();
-    let hasSymbols = checkSymbols();
-
-    let passwordTwo = "";
-    for (let i = 0; i < size; i++) {
-        let valid = false;
-        do {
-            let option = getOptions();
-            if (option === 1) {
-                passwordTwo += genLetters();
-                valid = true;
-            }
-
-            if (option === 2 && hasNumbers) {
-                passwordTwo += genNumbers();
-                valid = true;
-            } else if (option === 2 && !hasNumbers) {
-                valid = false;
-            }
-
-            if (option === 3 && hasSymbols) {
-                passwordTwo += genSymbols();
-                valid = true;
-            } else if (option === 3 && !hasSymbols) {
-                valid = false;
-            }
-        } while (valid != true);
-    }
-    return passwordTwo;
+    return password;
 }
 
 function genPasswords() {
-    output1.textContent = genPasswordOne();
-    output2.textContent = genPasswordTwo();
+    for(let i = 0; i < output.length; i++) {
+        output[i].textContent = genPassword();
+    }
 }
