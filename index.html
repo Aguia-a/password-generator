@@ -23,9 +23,9 @@
                     <div class="flex-column">
                         <label for="size-el">Password Length</label>
                         <div class="functions-wrapper">
-                            <button id="del-el" class="btn function" onclick="delOne()">-1</button>
+                            <button id="del-el" class="btn function" onclick="change(-1)">-1</button>
                             <div id="passLen-el"></div>
-                            <button id="add-el" class="btn function" onclick="addOne()">+1</button>
+                            <button id="add-el" class="btn function" onclick="change(1)">+1</button>
                         </div>
                     </div>
                     
@@ -48,12 +48,12 @@
         <section id="password">
             <div class="output-wrapper">
                 <div class="output-area" id="outputOne"></div>
-                <button id="copyOne" class="copy" onclick="copyPassOne()"><img class="copy-img" src="./icons/copy-icon.png"/></button>
+                <button id="copyOne" class="copy" onclick="copyPass(0)"><img class="copy-img" src="./icons/copy-icon.png"/></button>
             </div>
             
             <div class="output-wrapper">
                 <div class="output-area" id="outputTwo"></div>
-                <button id="copyTwo" class="copy" onclick="copyPassTwo()"><img class="copy-img" src="./icons/copy-icon.png"/></button>
+                <button id="copyTwo" class="copy" onclick="copyPass(1)"><img class="copy-img" src="./icons/copy-icon.png"/></button>
             </div>
         </section>
 
